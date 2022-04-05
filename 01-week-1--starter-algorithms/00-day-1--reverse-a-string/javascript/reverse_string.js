@@ -61,3 +61,4 @@ module.exports = reverseString;
 // 5. Code!
 
 // And a written explanation of your solution
+// Iterates through the string passed in in reverse order, pushes each character into an array, joins the elements of the array into a string, then returns that string.
