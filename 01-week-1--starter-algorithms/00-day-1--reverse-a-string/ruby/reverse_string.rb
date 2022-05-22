@@ -1,15 +1,27 @@
 def reverse_string(str)
   arr = []
   i = str.length - 1
+
   while i > -1
     arr << str[i]
-    i --
+    i -= 1
   end
 
   return arr.join('')
 end
 
 if __FILE__ == $PROGRAM_NAME
+  puts "Expecting: 'acceBeR'"
+  puts "=>", reverse_string('ReBecca')
+
+  puts  puts "Expecting: 'toorG'"
+  puts "=>", reverse_string('Groot')
+
+  puts  puts "Expecting: 'ayrA'"
+  puts "=>", reverse_string('Arya')
+
+  puts
+
   puts "Expecting: 'ih'"
   puts "=>", reverse_string('hi')
 
@@ -17,8 +29,6 @@ if __FILE__ == $PROGRAM_NAME
 
   puts "Expecting: 'ybabtac'"
   puts "=>", reverse_string('catbaby')
-
-  # Don't forget to add your own!
 end
 
 # Please add your pseudocode to this file
