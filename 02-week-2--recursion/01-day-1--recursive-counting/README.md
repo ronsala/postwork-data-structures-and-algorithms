@@ -18,7 +18,7 @@ while (count < 10) {
   console.log(count);
   ++count;
 }
-```
+``
 
 If you get a stack overflow, just breathe. We all get them - the trick is to get used to them and carry on solving the problem.
 

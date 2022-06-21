@@ -37,7 +37,7 @@ module.exports = fibonacci;
 // Please add your pseudocode to this file
 /*
 - Base case 1: Return number itself if < 2.
-- Base case 2: Otherwise, return either an expression adding the return values of recursive calls.
+- Base case 2: Otherwise, return an expression adding the return values of recursive calls.
 */
 
 // And a written explanation of your solution
