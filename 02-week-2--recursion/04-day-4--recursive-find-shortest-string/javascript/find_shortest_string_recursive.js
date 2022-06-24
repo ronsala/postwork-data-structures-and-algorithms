@@ -1,3 +1,15 @@
+function findShortestString(arr) {
+  let shortest = arr[0];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].length < shortest.length) {
+      shortest = arr[i];
+    }
+  }
+
+  return shortest;
+}
+
 function findShortestStringRecursive(arr) {
   if (arr.length === 1) {
     return arr[0];
@@ -32,6 +44,49 @@ if (require.main === module) {
 
   console.log("Expecting: 'Maine'");
   console.log("=>", findShortestStringRecursive(['Mississippi', 'Maine', 'Montana', 'Maryland']));
+
+  // BENCHMARK HERE
+
+    let shortInput = ["JavaScript", "Ruby", "Python"];
+    let longInput = [];
+
+    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+    for (let i = 0; i < 100; i++) {
+      let string = '';
+      const length = Math.floor(Math.random() * 10) +1;
+
+      for (let j = 0; j < length; j++) {
+        const letter = letters.charAt(Math.floor(Math.random() * letters.length));
+        string += letter;
+      }
+
+      longInput.push(string);
+    }
+
+    const iterativeStartTime = Date.now();
+
+    for (let i = 0; i < 1000; i++) {
+      findShortestString(shortInput);
+      findShortestString(longInput);
+    }
+
+    let iterativeEndTime = Date.now();
+    let iterativeRuntime = iterativeEndTime - iterativeStartTime;
+
+    console.log(`Iterative version average runtime: ${iterativeRuntime / 2000} millisecond(s)`);
+
+    const recursiveStartTime = Date.now();
+
+    for (let i = 0; i < 1000; i++) {
+      findShortestStringRecursive(shortInput);
+      findShortestStringRecursive(longInput);
+    }
+
+    let recursiveEndTime = Date.now();
+    let recursiveRuntime = recursiveEndTime - recursiveStartTime;
+
+    console.log(`Recursive version average runtime: ${recursiveRuntime / 2000} millisecond(s)`);
 }
 
 module.exports = findShortestStringRecursive;
